@@ -1,14 +1,17 @@
 # app.rb
-require 'sinatra'
+require "sinatra/base"
+require "sinatra/content_for"
 
 class MyWebApp < Sinatra::Base
-  get '/' do
-     erb :index
-  end
-  get '/news.erb' do
-     erb :news
-  end
-  get '/other.erb' do
-     erb :other
-  end
+	helpers Sinatra::ContentFor
+
+  	get '/' do
+    	erb :index
+  	end
+  	get '/news.erb' do
+    	erb :news
+  	end
+  	get '/other.erb' do
+    	erb :other
+  	end
 end
